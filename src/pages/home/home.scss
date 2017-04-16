@@ -1,17 +1,21 @@
 page-home {
-   
+   .home-title{
+    color: color($colors,"primarytext");
+    font-family: freescript;
+    font-size: 3em;
+   }
+    .contenido{
+        background-image: url('../../assets/img/restaurantesdelmundo3_0.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;      
+    }
+    .titulo{
+        background-color: color($colors,"light");
+        border-radius: 5px; 
+    }
 }
 
-h1{
-    text-align: center;
-    color: #FFFFFF;
-   }
-.contenido{
-    background-image: url('http://www.winstonchurchills.com/imgs/inicio/lg/img-2.jpg');
-    background-size: contain;
-}
-.titulo{
-    background-color: #F27500;
-    border-radius: 5px;
-}
+
+
 

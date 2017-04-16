@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Bebidas
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button ion-button icon-only>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col *ngFor="let b of Bebidas" col-12 col-md-6 col-lg-4>
+      <ion-card>
+        <img src="{{b.img}}">
+        <ion-card-content class="bebida-contenido">
+          <div class="bebida-division">
+            <div>
+              <ion-card-title>{{b.nombre}}</ion-card-title>
+            </div>
+            <div>
+              <p>${{b.precio}}</p>
+            </div>
+          </div>
+          <div>
+            <button ion-button icon-only color="labelLigth" class="boton-bebidas" (click)="añadirCarrito()">
+              <ion-icon name="add-circle" color="primary"></ion-icon>
+            </button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
