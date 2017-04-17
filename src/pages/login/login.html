@@ -4,26 +4,28 @@
         <h1 class="login-title" text-center>iEat</h1>
 
         <div class="login-inputs">
-
+        <form #form="ngForm">
             <ion-row>
                 <ion-col col-12 col-md-6 offset-md-6 col-lg-4 offset-lg-8>
                     <ion-item color="item">
                         <ion-label color="labelLigth" floating>Usuario</ion-label>
-                        <ion-input name="usuario" type="text"></ion-input>
+                        <ion-input name="usuario" type="text" required></ion-input>
                     </ion-item>
                 </ion-col>
 
                 <ion-col col-12 col-md-6 offset-md-6 col-lg-4 offset-lg-8>
                     <ion-item color="item">
                         <ion-label color="labelLigth" floating>Password</ion-label>
-                        <ion-input name="contraseña" type="password"></ion-input>
+                        <ion-input name="contraseña" type="password" required></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>
+            </form>
         </div>
+        
         <ion-row margin-botton>
             <button ion-col col-6 col-md-3 offset-md-6 col-lg-2 offset-lg-8 ion-button clear>Resgistrate</button>
-            <button ion-col col-6 col-md-3 col-lg-2 ion-button block (click)="login()">Entrar</button>
+            <button ion-col col-6 col-md-3 col-lg-2 ion-button block (click)="login()" [disabled]="!form.valid">Entrar</button>
         </ion-row>
 
     </div>

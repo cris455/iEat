@@ -13,13 +13,13 @@ export class HomePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {  }
 
   goToPizza(){
-    this.navCtrl.push(AboutPage);
+    this.navCtrl.parent.push(AboutPage);
   }
   goToBebidas(){
-    this.navCtrl.push(BebidaPage);
+    this.navCtrl.parent.push(BebidaPage);
   }
   goToPostres(){
-    this.navCtrl.push(AboutPage);
+    this.navCtrl.parent.push(AboutPage);
   }
 
 }
