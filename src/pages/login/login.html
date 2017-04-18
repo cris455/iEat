@@ -9,14 +9,14 @@
                 <ion-col col-12 col-md-6 offset-md-6 col-lg-4 offset-lg-8>
                     <ion-item color="item">
                         <ion-label color="labelLigth" floating>Usuario</ion-label>
-                        <ion-input name="usuario" type="text" required></ion-input>
+                        <ion-input name="usuario" type="text" required [(ngModel)]="user"></ion-input>
                     </ion-item>
                 </ion-col>
 
                 <ion-col col-12 col-md-6 offset-md-6 col-lg-4 offset-lg-8>
                     <ion-item color="item">
                         <ion-label color="labelLigth" floating>Password</ion-label>
-                        <ion-input name="contraseña" type="password" required></ion-input>
+                        <ion-input name="contraseña" type="password" required [(ngModel)]="pass"></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>

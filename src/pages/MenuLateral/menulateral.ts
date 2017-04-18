@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Storage } from '@ionic/storage'
 import { NavController } from 'ionic-angular';
 import { HomePage } from "../home/home";
 import { LoginPage } from "../login/login"
@@ -22,8 +22,11 @@ export class MenuLateralPage {
 
     mainContent: any;
 
-    constructor(public navCtrl: NavController) {
+    constructor(public navCtrl: NavController, public storage: Storage) {
         this.mainContent = HomePage;
+        storage.get("user").then( val=>{
+            console.log(val);
+        });
     }
 
     selectMenu(index: number) {
@@ -45,6 +48,7 @@ export class MenuLateralPage {
     }
 
     logout() {
+        this.storage.set("logged",false);
         this.navCtrl.setRoot(LoginPage);
     }
 }

@@ -1,11 +1,13 @@
 <ion-header>
   <ion-toolbar color="dark">
     <ion-title>Bienvenido</ion-title>
-    <!--<ion-buttons left>  
-      <button ion-button icon-only>
+
+    <!--<button ion-button icon-only menuToggle> <ion-icon name="menu"></ion-icon> </button>-->
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle> 
         <ion-icon name="menu"></ion-icon>
       </button>
-   </ion-buttons>  -->
+    </ion-buttons>
     <ion-buttons end>
       <button ion-button icon-only>
         <ion-icon name="search"></ion-icon>
@@ -20,18 +22,22 @@
   </ion-list-header>
   <ion-card>
     <ion-list>
-    <button ion-item color="light" (click)="goToPizza()">
+      <button ion-item color="light" (click)="goToPizza()">
+      <ion-icon name="restaurant" item-left color="primary"></ion-icon>
+      Comidas
+    </button>
+      <button ion-item color="light" (click)="goToPizza()">
       <ion-icon name="pizza" item-left color="primary"></ion-icon>
       Pizzas
     </button>
 
-    <button ion-item color="light">
+      <button ion-item color="light">
       <ion-icon name="ice-cream" item-left color="primary"></ion-icon>
       Postres
   
     </button>
 
-    <button ion-item color="light" (click)="goToBebidas()">
+      <button ion-item color="light" (click)="goToBebidas()">
       <ion-icon name="beer" item-left color="primary"></ion-icon>
       Bebidas
     </button>
