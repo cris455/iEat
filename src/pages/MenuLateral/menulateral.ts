@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { Storage } from '@ionic/storage'
+import { Storage } from '@ionic/storage';
 import { NavController } from 'ionic-angular';
 import { HomePage } from "../home/home";
 import { LoginPage } from "../login/login"
 import { PedidosPage } from "../pedidos/pedidos";
 import { CarritoPage } from "../carrito/carrito";
+import { AdminPage } from '../admin/admin';
 
 @Component({
     selector: 'page-menulateral',
@@ -50,6 +51,9 @@ export class MenuLateralPage {
     logout() {
         this.storage.set("logged",false);
         this.navCtrl.setRoot(LoginPage);
+    }
+    admin(){
+        this.mainContent = AdminPage;
     }
 }
 

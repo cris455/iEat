@@ -5,17 +5,18 @@ import { Producto } from "../models/producto";
 import { Pedido } from '../models/pedido'
 
 @Component({
-  selector: 'page-pedidos',
-  templateUrl: 'pedidos.html'
+  selector: 'page-admin',
+  templateUrl: 'admin.html'
 })
-export class PedidosPage {
+export class AdminPage {
 
   data = {usuario:"",password:""};
   productos: Producto[];
-  ventas : Producto[];
+  ventas: Producto[];
   pedido: Pedido;
+  total: number = 0;
   constructor(public navCtrl: NavController, public storage: Storage, public toastCtrl: ToastController) {
-      this.productos=[];
+   this.ventas=[];   
   }
 
   ionViewDidEnter(){
@@ -25,29 +26,15 @@ export class PedidosPage {
     this.storage.get(this.data.usuario).then(val=>{
       this.productos=JSON.parse(val);  
     });
-    this.pedido = {estado:0,productos:this.productos};
-    this.storage.get("ventas").then( val=>{
+    this.storage.get("ventas").then((val)=>{
         this.ventas=JSON.parse(val);
+      });
+    this.ventas.forEach((u)=>{
+        this.total = this.total + u.total; 
     });
-    this.productos.forEach((i)=>{
-       this.ventas.push(i);
-    });
-    
-    this.storage.set("ventas",JSON.stringify(this.ventas));
-
   }
   
   actualizarPedido(valor:number){
       this.pedido = {estado:valor,productos:this.productos}; 
   }
-
-  /*cancelarPedido(){
-    this.storage.set(this.data.usuario,[]);
-    this.productos= [];
-    let toast = this.toastCtrl.create({
-        message: 'Su orden fue eliminada con éxito',
-        duration: 2000
-      });
-      toast.present();
-  }  */
 }

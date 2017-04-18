@@ -19,6 +19,7 @@ import { MenuLateralPage } from '../pages/MenuLateral/menulateral';
 import { PizzaPage } from '../pages/pizza/pizza';
 import { ComidaPage } from '../pages/comida/comida';
 import { PostrePage } from '../pages/postre/postre';
+import { AdminPage } from '../pages/admin/admin';
 @NgModule({
   declarations: [
     MyApp,
@@ -30,7 +31,8 @@ import { PostrePage } from '../pages/postre/postre';
     CarritoPage,
     PizzaPage,
     ComidaPage,
-    PostrePage
+    PostrePage,
+    AdminPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -47,7 +49,8 @@ import { PostrePage } from '../pages/postre/postre';
     CarritoPage,
     PizzaPage,
     ComidaPage,
-    PostrePage
+    PostrePage,
+    AdminPage
   ],
   providers: [
     StatusBar,

@@ -21,6 +21,7 @@ export class MyApp {
 
       storage.get("logged").then((val)=>{
         if(val){
+
           this.rootPage=MenuLateralPage;
         }else{
           this.rootPage=LoginPage;
@@ -46,6 +47,7 @@ export class MyApp {
       storage.set("15",0);
       storage.set("16",0);
       storage.set("17",0);
+      storage.set("ventas",[]);
    });
     
     platform.ready().then(() => {

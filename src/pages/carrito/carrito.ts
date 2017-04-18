@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Producto } from '../models/producto';
+import { Usuario } from '../models/usuario'
 import { MenuLateralPage } from "../MenuLateral/menulateral";
 
 @Component({
@@ -151,7 +152,8 @@ export class CarritoPage {
 
   hacerPedido() {
     let toast;
-    let nameuser: string;
+    let user: Usuario;
+    user={usuario:"",password:""};
     if (this.total != 0) {
       this.storage.set("ventas", this.total);
       toast = this.toastCtrl.create({
@@ -160,9 +162,12 @@ export class CarritoPage {
       });
       toast.present();
       this.storage.get("user").then(val => {
-        nameuser = val.usuario;
+         user = {usuario:val.usuario,password:val.password};
+        console.log(val); 
       });
-      this.storage.set(nameuser, JSON.stringify(this.productos));
+      let str:string = user.usuario;
+      this.storage.set(str, JSON.stringify(this.productos));
+      
       this.productos = [];
       this.storage.set("0", 0);
       this.storage.set("1", 0);

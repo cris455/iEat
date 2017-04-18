@@ -11,6 +11,7 @@ import { Storage } from '@ionic/storage';
 export class PostrePage {
 
   Postres : Postre[];
+  
   constructor(public navCtrl: NavController, public service: PostreData, public storage: Storage, public toastCtrl: ToastController) {
     this.Postres = [];
   }
