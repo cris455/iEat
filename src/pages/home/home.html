@@ -1,6 +1,5 @@
 <ion-header>
-  <ion-toolbar color="dark">
-    <ion-title>Bienvenido</ion-title>
+  <ion-navbar color="dark">
 
     <!--<button ion-button icon-only menuToggle> <ion-icon name="menu"></ion-icon> </button>-->
     <ion-buttons left>
@@ -8,12 +7,13 @@
         <ion-icon name="menu"></ion-icon>
       </button>
     </ion-buttons>
+    <ion-title>Bienvenido</ion-title>
     <ion-buttons end>
       <button ion-button icon-only>
         <ion-icon name="search"></ion-icon>
       </button>
     </ion-buttons>
-  </ion-toolbar>
+  </ion-navbar>
 </ion-header>
 
 <ion-content padding class="contenido">
@@ -22,7 +22,7 @@
   </ion-list-header>
   <ion-card>
     <ion-list>
-      <button ion-item color="light" (click)="goToPizza()">
+      <button ion-item color="light" (click)="goToComida()">
       <ion-icon name="restaurant" item-left color="primary"></ion-icon>
       Comidas
     </button>
@@ -31,7 +31,7 @@
       Pizzas
     </button>
 
-      <button ion-item color="light">
+      <button ion-item color="light" (click)="goToPostres()">
       <ion-icon name="ice-cream" item-left color="primary"></ion-icon>
       Postres
   
@@ -45,19 +45,3 @@
   </ion-card>
 
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-
-    <ion-buttons end>
-      <button ion-button color="primary" icon-right>
-        Cancelar pédido
-        <ion-icon name="trash"></ion-icon>
-      </button>
-      <button ion-button color="primary" icon-right>
-        Ordenar
-        <ion-icon name="send"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>

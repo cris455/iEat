@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 //import { HomePage } from "../home/home";
 import { MenuLateralPage } from "../MenuLateral/menulateral";
-import { Storage } from '@ionic/storage'
+import { Storage } from '@ionic/storage';
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'

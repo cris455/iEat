@@ -1,19 +1,19 @@
 <ion-split-pane when="lg"> 
     <ion-menu [content]="content">
-        <ion-list-header>
-            Menú
+        <ion-list-header color="dark">
+            <h1 class="title-list">Opciones</h1>
         </ion-list-header>
         <ion-list no-lines>
             <button ion-item *ngFor="let m of menuOpc; let i = index" menuClose
-                (click)="selectMenu(i)"
+                (click)="selectMenu(i)" color="secondary"
             >  
-                <ion-icon [name]="m.icon" margin-right></ion-icon>{{m.label}}
+                <ion-icon [name]="m.icon" margin-right color="light"></ion-icon>{{m.label}}
             </button>
-            <ion-list-header>
-                Perfil
+            <ion-list-header color="dark">
+                <h1 class="title-list">Perfil</h1>
             </ion-list-header>
-            <button ion-item menuClose (click)="logout()">
-                <ion-icon name="exit" margin-right> </ion-icon>Cerrar Sesión
+            <button ion-item menuClose (click)="logout()" color="secondary">
+                <ion-icon name="exit" margin-right color="light"> </ion-icon>Cerrar Sesión
             </button>
         </ion-list>
     </ion-menu>

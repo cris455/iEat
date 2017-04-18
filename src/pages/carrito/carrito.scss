@@ -1,3 +1,65 @@
 page-carrito{
-    
+
+    .contenido{
+        background-image: url('../../assets/img/i3.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .tablas{
+        background-color: color($colors,"light");
+        margin:70px;
+    }
+    .title{
+        color:color($colors,"primarytext");
+        font-size: 2em;
+        border:solid;
+        border-color: color($colors,"dark");
+    }
+    .text{
+        color:color($colors,"secondary");
+        font-size:1em;
+        border:solid;
+        border-color:color($colors,"secondary");
+        text-align: center;
+    }
+    /*switch (index) {
+      case 0:
+        this.storage.get("Pepsi").then(val => {
+          this.val = val + 1;
+          this.storage.set("Pepsi", this.val);
+        });
+        toast.present();
+        break;
+      case 1:
+        this.storage.get("Manzana").then((val) => {
+          this.val = val + 1;
+        });
+        this.storage.set("Manzana", this.val);
+        toast.present();
+        break;
+      case 2:
+        this.storage.get("Coca-cola").then((val) => {
+          this.val = val + 1;
+        });
+        this.storage.set("Coca-cola", this.val);
+        toast.present();
+        break;
+      case 3:
+        this.storage.get("Hit Mora").then((val) => {
+          this.val = val + 1;
+        });
+        this.storage.set("Hit Mora", this.val);
+        toast.present();
+        break;
+      case 4:
+        this.storage.get("Hit Mango").then((val) => {
+          this.val = val + 1;
+        });
+        this.storage.set("Hit Mango", this.val);
+        toast.present();
+        break;
+      default:
+        break;
+    }*/
 }

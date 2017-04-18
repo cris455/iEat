@@ -1,16 +1,48 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="dark">
+        <ion-title>Carrito de Compras</ion-title>
         <ion-buttons left>
             <button ion-button icon-only menuToggle> 
-                <ion-icon name="menu"></ion-icon>
-            </button>
+        <ion-icon name="menu"></ion-icon>
+      </button>
         </ion-buttons>
-        <ion-title>
-            Carrito
-        </ion-title>
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="contenido">
+    <table height="80%" width="80%" class="tablas">
+        <tr>
+            <th class="title"><strong>Producto</strong></th>
+            <th class="title"><strong>Cantidad</strong></th>
+            <th class="title"><strong>Total</strong></th>
+        </tr>
 
+        <tr *ngFor="let p of productos">
+            <td class="text">{{p.nombre}}</td>
+            <td class="text">{{p.cantidad}}</td>
+            <td class="text">{{p.total}}</td>
+        </tr>
+
+        <tr>
+            <td colspan="2" class="text"><strong>TOTAL A PAGAR</strong></td>
+            <td class="text">{{total}}</td>
+        </tr>
+
+    </table>
 </ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+
+        <ion-buttons end>
+            <button ion-button color="primary" icon-right (click)="cancelarPedido()" >
+        Cancelar Orden
+        <ion-icon name="trash"></ion-icon>
+      </button>
+            <button ion-button color="primary" icon-right (click)="hacerPedido()">
+        Ordenar
+        <ion-icon name="send"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>

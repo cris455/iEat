@@ -1,25 +1,23 @@
 import { Component } from '@angular/core';
 
-import { Bebida, BebidaData } from '../../providers/bebidas-data';
+import { Pizza, PizzaData } from '../../providers/pizzas-data';
 import { NavController, ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 @Component({
-  selector: 'page-bebida',
-  templateUrl: 'bebida.html'
+  selector: 'page-pizza',
+  templateUrl: 'pizza.html'
 })
-export class BebidaPage {
+export class PizzaPage {
 
-  Bebidas: Bebida[];
-  constructor(public navCtrl: NavController, public service: BebidaData, public storage: Storage, public toastCtrl: ToastController) {
-    this.Bebidas = [];
+  Pizzas : Pizza[];
+  constructor(public navCtrl: NavController, public service: PizzaData, public storage: Storage, public toastCtrl: ToastController) {
+    this.Pizzas = [];
   }
 
   ionViewDidEnter() {
-    this.Bebidas = this.service.data;
+    this.Pizzas = this.service.data;
   }
-
-  
 
   addCarrito(index: number) {
     let cantidad:number ;
@@ -29,44 +27,43 @@ export class BebidaPage {
     });
     switch (index) {
       case 0:
-        this.storage.get("0").then(val => {
+        this.storage.get("9").then(val => {
           cantidad = val + 1;
-          this.storage.set("0", cantidad);
+          this.storage.set("9", cantidad);
           console.log(cantidad);
         });
         toast.present();
         break;
       case 1:
-        this.storage.get("1").then(val => {
+        this.storage.get("10").then(val => {
           cantidad = val + 1;
-          this.storage.set("1", cantidad);
+          this.storage.set("10", cantidad);
         });
         toast.present();
         break;
       case 2:
-       this.storage.get("2").then(val => {
+       this.storage.get("11").then(val => {
           cantidad = val + 1;
-          this.storage.set("2", cantidad);
+          this.storage.set("11", cantidad);
         });
         toast.present();
         break;
       case 3:
-        this.storage.get("3").then(val => {
+        this.storage.get("12").then(val => {
           cantidad = val + 1;
-          this.storage.set("3", cantidad);
+          this.storage.set("12", cantidad);
         });
         toast.present();
         break;
       case 4:
-        this.storage.get("4").then(val => {
+        this.storage.get("13").then(val => {
           cantidad = val + 1;
-          this.storage.set("4", cantidad);
+          this.storage.set("13", cantidad);
         });
         toast.present();
         break;
       default:
         break;
     }
-
   }
 }

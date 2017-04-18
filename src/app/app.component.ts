@@ -27,7 +27,26 @@ export class MyApp {
         }
       });
       
-    });
+      
+      storage.set("0",0);
+      storage.set("1",0);
+      storage.set("2",0);
+      storage.set("3",0);
+      storage.set("4",0);
+      storage.set("5",0);   
+      storage.set("6",0);
+      storage.set("7",0);
+      storage.set("8",0);   
+      storage.set("9",0);
+      storage.set("10",0);
+      storage.set("11",0);
+      storage.set("12",0);
+      storage.set("13",0);
+      storage.set("14",0);
+      storage.set("15",0);
+      storage.set("16",0);
+      storage.set("17",0);
+   });
     
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
