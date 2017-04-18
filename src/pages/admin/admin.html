@@ -10,23 +10,9 @@
 </ion-header>
 
 <ion-content class="contenido">
-      <table height="80%" width="80%" class="tablas">
-        <tr>
-            <th class="title"><strong>Producto</strong></th>
-            <th class="title"><strong>Cantidad</strong></th>
-            <th class="title"><strong>Total</strong></th>
-        </tr>
-
-        <tr *ngFor="let p of ventas">
-            <td class="text">{{p.nombre}}</td>
-            <td class="text">{{p.cantidad}}</td>
-            <td class="text">{{p.total}}</td>
-        </tr>
-        <tr>
-            <td colspan="2" class="text"><strong>TOTAL</strong></td>
-            <td class="text">{{total}}</td>
-        </tr>
-
-    </table>
-
+      
+    <ion-item>  
+        <ion-label>{{total}}</ion-label>
+    </ion-item>
+    
 </ion-content>

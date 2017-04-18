@@ -47,7 +47,7 @@ export class MyApp {
       storage.set("15",0);
       storage.set("16",0);
       storage.set("17",0);
-      storage.set("ventas",[]);
+      storage.set("ventas",0);
    });
     
     platform.ready().then(() => {

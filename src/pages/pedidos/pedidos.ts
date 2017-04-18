@@ -12,7 +12,6 @@ export class PedidosPage {
 
   data = {usuario:"",password:""};
   productos: Producto[];
-  ventas : Producto[];
   pedido: Pedido;
   constructor(public navCtrl: NavController, public storage: Storage, public toastCtrl: ToastController) {
       this.productos=[];
@@ -26,15 +25,6 @@ export class PedidosPage {
       this.productos=JSON.parse(val);  
     });
     this.pedido = {estado:0,productos:this.productos};
-    this.storage.get("ventas").then( val=>{
-        this.ventas=JSON.parse(val);
-    });
-    this.productos.forEach((i)=>{
-       this.ventas.push(i);
-    });
-    
-    this.storage.set("ventas",JSON.stringify(this.ventas));
-
   }
   
   actualizarPedido(valor:number){
