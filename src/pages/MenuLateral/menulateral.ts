@@ -24,7 +24,7 @@ export class MenuLateralPage {
     mainContent: any;
 
     constructor(public navCtrl: NavController, public storage: Storage) {
-        this.mainContent = HomePage;
+        this.mainContent= HomePage;
         storage.get("user").then( val=>{
             console.log(val);
         });
@@ -50,6 +50,7 @@ export class MenuLateralPage {
 
     logout() {
         this.storage.set("logged",false);
+        this.storage.set("user",{});
         this.navCtrl.setRoot(LoginPage);
     }
     admin(){

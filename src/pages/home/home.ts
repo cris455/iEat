@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { BebidaPage } from "../bebida/bebida";
-import { AboutPage } from "../about/about";
 import { PizzaPage } from "../pizza/pizza";
 import { ComidaPage } from "../comida/comida";
 import { PostrePage } from "../postre/postre";

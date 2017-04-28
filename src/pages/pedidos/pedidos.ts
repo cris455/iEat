@@ -15,6 +15,7 @@ export class PedidosPage {
   pedido: Pedido;
   constructor(public navCtrl: NavController, public storage: Storage, public toastCtrl: ToastController) {
       this.productos=[];
+      this.pedido={estado:0,productos:[]};
   }
 
   ionViewDidEnter(){
@@ -24,20 +25,16 @@ export class PedidosPage {
     this.storage.get(this.data.usuario).then(val=>{
       this.productos=JSON.parse(val);  
     });
-    this.pedido = {estado:0,productos:this.productos};
+    this.storage.get("pedido").then(val=>{
+      this.pedido = {estado:val, productos:[]};
+    });
+    this.pedido = {estado: this.pedido.estado,productos:this.productos};
   }
   
-  actualizarPedido(valor:number){
-      this.pedido = {estado:valor,productos:this.productos}; 
+  actualizarPedido(){
+     this.storage.get("pedido").then(val=>{
+      this.pedido = {estado:val, productos:this.productos};
+    });
   }
 
-  /*cancelarPedido(){
-    this.storage.set(this.data.usuario,[]);
-    this.productos= [];
-    let toast = this.toastCtrl.create({
-        message: 'Su orden fue eliminada con éxito',
-        duration: 2000
-      });
-      toast.present();
-  }  */
 }

@@ -10,25 +10,21 @@
 </ion-header>
 
 <ion-content class="contenido">
-   <ion-item>
-    <ion-label>El pedido a nombre de {{data.usuario}} tiene los siguientes productos <h1></h1></ion-label>
-   </ion-item>
+  <table height="80%" width="80%" class="tablas">
+    <tr>
+      <th class="title"><strong>Producto</strong></th>
+      <th class="title"><strong>Cantidad</strong></th>
+    </tr>
+    <tr *ngFor="let p of productos">
+      <td class="text">{{p.nombre}}</td>
+      <td class="text">{{p.cantidad}}</td>
+    </tr>
+    <tr>
+      <th class="title"><strong>Estado</strong></th>
+      <td class="text">{{pedido.estado}}%</td>
+    </tr>
+  </table>
 
-   <table height="80%" width="80%" class="tablas">
-        <tr>
-            <th class="title"><strong>Producto</strong></th>
-            <th class="title"><strong>Cantidad</strong></th>
-            <th class="title"><strong>Estado</strong></th>
-        </tr>
-
-        <tr *ngFor="let p of productos">
-            <td class="text">{{p.nombre}}</td>
-            <td class="text">{{p.cantidad}}</td>
-            <td class="text">{{pedido.estado}}%</td>
-        </tr>
-
-    </table>
- 
 </ion-content>
 
 <ion-footer>

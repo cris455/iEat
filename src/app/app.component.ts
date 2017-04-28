@@ -6,6 +6,7 @@ import { Storage } from '@ionic/storage'
 //import { HomePage } from "../pages/home/home";
 import { LoginPage } from "../pages/login/login";
 import { MenuLateralPage } from '../pages/MenuLateral/menulateral'
+import { AdminPage } from "../pages/admin/admin";
 //import { TabsPage } from "../pages/tabs/tabs";
 
 
@@ -18,17 +19,21 @@ export class MyApp {
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public storage: Storage) {
     
     storage.ready().then(()=>{
-
+      let usuario:string;
+      storage.get("user").then(val=>{
+          usuario=val.nombre;
+      });
       storage.get("logged").then((val)=>{
         if(val){
-
-          this.rootPage=MenuLateralPage;
+          if(usuario=="admin"){
+            this.rootPage=AdminPage;
+          }else{
+            this.rootPage=MenuLateralPage;
+          }
         }else{
           this.rootPage=LoginPage;
         }
       });
-      
-      
       storage.set("0",0);
       storage.set("1",0);
       storage.set("2",0);
@@ -47,7 +52,6 @@ export class MyApp {
       storage.set("15",0);
       storage.set("16",0);
       storage.set("17",0);
-      storage.set("ventas",0);
    });
     
     platform.ready().then(() => {

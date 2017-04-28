@@ -1,9 +1,9 @@
 <ion-header>
   <ion-navbar color="dark">
-    <ion-title>Admin</ion-title>
+    <ion-title>Menú administrador</ion-title>
     <ion-buttons left>
-      <button ion-button icon-only menuToggle> 
-        <ion-icon name="menu"></ion-icon>
+      <button ion-button icon-only (click)="logout()"> 
+        <ion-icon name="exit"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -11,8 +11,22 @@
 
 <ion-content class="contenido">
       
-    <ion-item>  
-        <ion-label>{{total}}</ion-label>
-    </ion-item>
+
+    <table height="80%" width="80%" class="tablas">
+    <tr>
+      <th class="title"><strong>Producto</strong></th>
+      <th class="title"><strong>Cantidad</strong></th>
+      <th class="title"><strong>Total</strong></th>
+    </tr>
+    <tr *ngFor="let p of productos">
+      <td class="text">{{p.nombre}}</td>
+      <td class="text">{{p.cantidad}}</td>
+      <td class="text">{{p.total}}</td>
+    </tr>
+    <tr>
+      <th class="title" colspan="2"><strong>TOTAL VENTA:</strong></th>
+      <th class="title">{{total}}</th>
+    </tr>
+  </table>
     
 </ion-content>

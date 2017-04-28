@@ -12,22 +12,20 @@ import { MenuLateralPage } from "../MenuLateral/menulateral";
 })
 export class CarritoPage {
 
-  productos: Producto[];
+  productos: Producto[] = [];
   producto: Producto;
   total: number;
   totalpedido: number;
-  cantidad :number;
+  cantidad: number;
   constructor(public navCtrl: NavController, public storage: Storage, public toastCtrl: ToastController) {
-    this.productos = [];
-    this.totalpedido=0;
+    this.totalpedido = 0;
   }
   ionViewDidEnter() {
-     
-    this.storage.get("ventas").then(val=>{
-      if(Number.isInteger(val))
-      {
-      this.total=val;
-      console.log(val);}
+
+    this.storage.get("ventas").then(val => {
+      if (Number.isInteger(val)) {
+        this.total = val;
+      }
     })
     this.storage.get("0").then(val => {
       if (val != 0) {
@@ -161,9 +159,9 @@ export class CarritoPage {
   hacerPedido() {
     let toast;
     let user: Usuario;
-    user={usuario:"",password:""};
+    user = { usuario: "", password: "" };
     if (this.totalpedido != 0) {
-      this.total=this.total+this.totalpedido;
+      this.total = this.total + this.totalpedido;
       this.storage.set("ventas", this.total);
       toast = this.toastCtrl.create({
         message: 'Su orden fue añadida con éxito',
@@ -171,13 +169,27 @@ export class CarritoPage {
       });
       toast.present();
       this.storage.get("user").then(val => {
-         user = {usuario:val.usuario,password:val.password};
-        console.log(val); 
+        user = { usuario: val.usuario, password: val.password };
       });
-      let str:string = user.usuario;
+      let str: string = user.usuario;
+      console.log("primera:"+JSON.stringify(this.productos)); 
       this.storage.set(str, JSON.stringify(this.productos));
-      
-      this.productos = [];
+      this.storage.set("pedido", 0);
+      this.storage.get("productos").then(val => {  
+      console.log("segunda:"+JSON.stringify(this.productos)); 
+        if (val==null) {
+          this.storage.set("productos", JSON.stringify(this.productos));
+        }
+        else {
+          let viejos:Producto[] = JSON.parse(val);
+          for(let i=0; i<viejos.length ; i++){
+            this.productos.push(viejos[i]);
+          }
+          console.log(JSON.stringify(viejos));
+          this.storage.set("productos", JSON.stringify(this.productos));
+        }
+         this.productos = [];
+      });
       this.storage.set("0", 0);
       this.storage.set("1", 0);
       this.storage.set("2", 0);
@@ -196,7 +208,7 @@ export class CarritoPage {
       this.storage.set("15", 0);
       this.storage.set("16", 0);
       this.storage.set("17", 0);
-      this.totalpedido=0;
+      this.totalpedido = 0;
     } else {
       toast = this.toastCtrl.create({
         message: 'Debe primero ordenar algo',
@@ -224,13 +236,13 @@ export class CarritoPage {
     this.storage.set("15", 0);
     this.storage.set("16", 0);
     this.storage.set("17", 0);
-    this.totalpedido=0;
+    this.totalpedido = 0;
     let toast = this.toastCtrl.create({
-        message: 'Su orden fue cancelada',
-        duration: 2000
-      });
-      toast.present();
-      this.navCtrl.setRoot(MenuLateralPage);
+      message: 'Su orden fue cancelada',
+      duration: 2000
+    });
+    toast.present();
+    this.navCtrl.setRoot(MenuLateralPage);
   }
 
 }

@@ -20,6 +20,7 @@ import { PizzaPage } from '../pages/pizza/pizza';
 import { ComidaPage } from '../pages/comida/comida';
 import { PostrePage } from '../pages/postre/postre';
 import { AdminPage } from '../pages/admin/admin';
+import { UsuarioData } from "../providers/login-data";
 @NgModule({
   declarations: [
     MyApp,
@@ -59,7 +60,8 @@ import { AdminPage } from '../pages/admin/admin';
     PizzaData,
     BebidaData,
     ComidaData,
-    PostreData
+    PostreData,
+    UsuarioData
   ]
 })
 export class AppModule {}

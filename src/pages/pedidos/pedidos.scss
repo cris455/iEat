@@ -4,14 +4,15 @@ page-pedidos{
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+        align-content: center;
     }
     .tablas{
         background-color: color($colors,"light");
-        margin:70px;
-    }
+        margin: 2em;
+   }
     .title{
         color:color($colors,"primarytext");
-        font-size: 2em;
+        font-size: 1em;
         border:solid;
         border-color: color($colors,"dark");
     }
