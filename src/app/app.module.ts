@@ -21,6 +21,11 @@ import { ComidaPage } from '../pages/comida/comida';
 import { PostrePage } from '../pages/postre/postre';
 import { AdminPage } from '../pages/admin/admin';
 import { UsuarioData } from "../providers/login-data";
+import { LoginService } from "../providers/login-service";
+
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -61,7 +66,8 @@ import { UsuarioData } from "../providers/login-data";
     BebidaData,
     ComidaData,
     PostreData,
-    UsuarioData
+    UsuarioData,
+    LoginService
   ]
 })
 export class AppModule {}
